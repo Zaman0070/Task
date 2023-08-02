@@ -6,7 +6,6 @@ import 'package:job_task/model/watch_model.dart';
 class Services {
   Future<List<WatchModel>> getList() async {
     List<WatchModel> allList = [];
-
     try {
       Response response = await Requests.get(true,
           params: 'api_key=163258633a4f8a9b8e151a0e8de054ac');

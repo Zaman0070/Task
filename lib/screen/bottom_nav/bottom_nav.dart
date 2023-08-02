@@ -26,8 +26,6 @@ class _BottomNavigationBarsState extends State<BottomNavigationBars> {
     return InternetConnectivityListener(
         connectivityListener: (BuildContext context, bool hasInternetAccess) {
           if (hasInternetAccess) {
-            Get.snackbar('Internet', 'Internet connected',
-                backgroundColor: Colors.green);
           } else {
             Get.snackbar('Internet', 'Internet not connected',
                 backgroundColor: Colors.red);

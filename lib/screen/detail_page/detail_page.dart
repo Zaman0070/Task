@@ -138,6 +138,7 @@ class DetailPage extends StatelessWidget {
                     ),
                     Text(
                       movieList.overview.toString(),
+                      maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                           color: appColor,

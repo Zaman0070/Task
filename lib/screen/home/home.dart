@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:get/get.dart';
 import 'package:job_task/contant/color.dart';
 import 'package:job_task/controller/watch_controller.dart';
 import 'package:job_task/model/watch_model.dart';
+import 'package:job_task/screen/detail_page/detail_page.dart';
 import 'package:job_task/screen/home/widget/home_box.dart';
 import 'package:job_task/screen/watch/widget/app_bar.dart';
 
@@ -44,6 +45,13 @@ class HomePage extends StatelessWidget {
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 6),
                                 child: HomeBox(
+                                    onTap: () {
+                                      Get.to(
+                                        () => DetailPage(
+                                          movieList: movieList,
+                                        ),
+                                      );
+                                    },
                                     image: movieList.backdrop_path.toString(),
                                     title: movieList.title.toString()),
                               );
