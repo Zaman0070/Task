@@ -15,7 +15,8 @@ class Services {
         SmartDialog.dismiss;
       }
     } catch (e) {
-      rethrow;
+      SmartDialog.dismiss;
+      print(e);
     }
     return allList;
   }

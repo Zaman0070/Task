@@ -41,8 +41,7 @@ dependencies:
   dio: ^5.3.1
   flutter_smart_dialog: ^4.9.3+2
   intl: ^0.18.1
-  connectivity_plus: ^4.0.2
-  observe_internet_connectivity: ^1.0.2
+  cross_connectivity: ^3.0.3
 
 dev_dependencies:
   flutter_test:
