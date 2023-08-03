@@ -33,7 +33,7 @@ class DetailPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Genre',
+                      'Genres',
                       style: TextStyle(
                           color: appColor,
                           fontSize: 20.sp,
@@ -56,13 +56,13 @@ class DetailPage extends StatelessWidget {
                               'Action',
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16.sp,
+                                  fontSize: 14.5.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
                         SizedBox(
-                          width: 10.w,
+                          width: 6.w,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -76,13 +76,13 @@ class DetailPage extends StatelessWidget {
                               'Thriller',
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16.sp,
+                                  fontSize: 14.5.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
                         SizedBox(
-                          width: 10.w,
+                          width: 6.w,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -96,13 +96,13 @@ class DetailPage extends StatelessWidget {
                               'Science',
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16.sp,
+                                  fontSize: 14.5.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
                         SizedBox(
-                          width: 10.w,
+                          width: 6.w,
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -116,15 +116,19 @@ class DetailPage extends StatelessWidget {
                               'Fiction',
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16.sp,
+                                  fontSize: 14.5.sp,
                                   fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 20.h,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: Divider(
+                        color: appColor.withOpacity(0.1),
+                        thickness: 1,
+                      ),
                     ),
                     Text(
                       'Overview',
@@ -141,9 +145,9 @@ class DetailPage extends StatelessWidget {
                       maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                          color: appColor,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500),
+                          fontSize: 13.5.sp,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),

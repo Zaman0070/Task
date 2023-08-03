@@ -5,7 +5,11 @@ class HomeBox extends StatelessWidget {
   final String image;
   final String title;
   final Function() onTap;
-  const HomeBox({super.key, required this.image, required this.title, required this.onTap});
+  const HomeBox(
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +27,31 @@ class HomeBox extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title,
-                  style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500)),
-            ],
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            gradient: LinearGradient(
+              colors: [
+                Colors.transparent,
+                Colors.black.withOpacity(0.7),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(18.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title,
+                    style: TextStyle(
+                        fontSize: 14.sp,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500)),
+              ],
+            ),
           ),
         ),
       ),

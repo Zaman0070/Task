@@ -54,7 +54,7 @@ class SearchScreen extends StatelessWidget {
                               ),
                               suffixIcon: IconButton(
                                 onPressed: () {
-                                  searchController.clear();
+                                  Get.back();
                                 },
                                 icon: const Icon(
                                   Icons.close,

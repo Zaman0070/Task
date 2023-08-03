@@ -31,94 +31,112 @@ class DetailBox extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 10.h,
-          ),
-          Row(
-            children: [
-              IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.white,
-                  )),
-              SizedBox(
-                width: 10.w,
-              ),
-              Text(
-                'Watch',
-                style: TextStyle(
-                    color: white, fontSize: 20.sp, fontWeight: FontWeight.w500),
-              ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          gradient: LinearGradient(
+            colors: [
+              Colors.transparent,
+              Colors.black.withOpacity(0.9),
             ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
-          const Spacer(),
-          Text(DateFormat.yMMMd().format(DateTime.parse(date)),
-              style: TextStyle(
-                  color: white, fontSize: 18.sp, fontWeight: FontWeight.w500)),
-          SizedBox(
-            height: 12.h,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 55),
-            child: InkWell(
-              onTap: getTicket,
-              child: Container(
-                height: 45.h,
-                decoration: BoxDecoration(
-                  color: const Color(0xff61C3F2),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Center(
-                  child: Text(
-                    'Get Ticket',
-                    style: TextStyle(
-                        color: white,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ),
+        ),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 10.h,
             ),
-          ),
-          SizedBox(
-            height: 12.h,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 55),
-            child: InkWell(
-              onTap: getTrailer,
-              child: Container(
-                height: 45.h,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  border: Border.all(color: const Color(0xff61C3F2)),
-                  borderRadius: BorderRadius.circular(10),
+            Row(
+              children: [
+                IconButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.white,
+                    )),
+                SizedBox(
+                  width: 10.w,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.play_arrow, color: white),
-                    Text(
-                      'Watch Trailer',
+                Text(
+                  'Watch',
+                  style: TextStyle(
+                      color: white,
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
+            const Spacer(),
+            Text(
+                'In Theaters ${DateFormat.yMMMd().format(DateTime.parse(date))}',
+                style: TextStyle(
+                    color: white,
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500)),
+            SizedBox(
+              height: 12.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 55),
+              child: InkWell(
+                onTap: getTicket,
+                child: Container(
+                  height: 45.h,
+                  decoration: BoxDecoration(
+                    color: const Color(0xff61C3F2),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Get Tickets',
                       style: TextStyle(
                           color: white,
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w500),
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 22.h,
-          ),
-        ],
+            SizedBox(
+              height: 12.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 55),
+              child: InkWell(
+                onTap: getTrailer,
+                child: Container(
+                  height: 45.h,
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    border: Border.all(color: const Color(0xff61C3F2)),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.play_arrow, color: white),
+                      Text(
+                        'Watch Trailer',
+                        style: TextStyle(
+                            color: white,
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 22.h,
+            ),
+          ],
+        ),
       ),
     );
   }

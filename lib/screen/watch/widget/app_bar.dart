@@ -56,9 +56,7 @@ class _WatchAppBarState extends State<WatchAppBar> {
                           ),
                           suffixIcon: IconButton(
                             onPressed: () {
-                              setState(() {
-                                isSearch = !isSearch;
-                              });
+                              Get.back();
                             },
                             icon: const Icon(
                               Icons.close,
