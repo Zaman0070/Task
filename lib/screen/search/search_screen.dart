@@ -37,6 +37,7 @@ class SearchScreen extends StatelessWidget {
                         child: TextFormField(
                           onChanged: (value) {
                             watchController.searchMovies(value);
+                            watchController.search();
                           },
                           style: const TextStyle(color: black),
                           controller: searchController,
@@ -68,7 +69,7 @@ class SearchScreen extends StatelessWidget {
             ),
             Expanded(
               child: Obx(() {
-                final filteredMovies = watchController.filteredMovies;
+                final filteredMovies = watchController.searchList;
                 return Container(
                   color: grey,
                   child: ListView.builder(

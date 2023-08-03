@@ -4,7 +4,7 @@ import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart' hide Response;
 
 class Requests {
-  static Future<Response> get(bool showLoader,
+  static Future<Response> get(bool showLoader, String url,
       {String? params}) async {
     try {
       if (showLoader) {
@@ -13,8 +13,8 @@ class Requests {
           backDismiss: false,
         );
       }
-      const String baseUrl = 'https://api.themoviedb.org/3/movie/upcoming';
-      String url = baseUrl;
+      //  String baseUrl = url;
+      // String url = baseUrl;
       if (params != null) {
         url = "$url?$params";
       }

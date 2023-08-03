@@ -5,12 +5,14 @@ import 'package:job_task/services/services.dart';
 
 class WatchController extends GetxController {
   var watchList = <WatchModel>[].obs;
+  var searchList = <WatchModel>[].obs;
   var searchText = ''.obs;
 
   @override
   void onInit() async {
     super.onInit();
     await getList();
+    // await search();
   }
 
   Future<void> getList() async {
@@ -19,14 +21,15 @@ class WatchController extends GetxController {
     SmartDialog.dismiss();
   }
 
-  void searchMovies(String query) {
-    searchText.value = query;
+  Future<void> search() async {
+    searchList.value = await Services().searchList(
+      searchText.value,
+    );
+    update();
+    SmartDialog.dismiss();
   }
 
-  List<WatchModel> get filteredMovies {
-    return watchList
-        .where((movie) =>
-            movie.title!.toLowerCase().contains(searchText.value.toLowerCase()))
-        .toList();
+  void searchMovies(String query) {
+    searchText.value = query;
   }
 }
